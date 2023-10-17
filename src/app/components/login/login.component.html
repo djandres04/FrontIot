@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="login.component.css">
+
+<section class="login">
+  <form [formGroup]="formLogin">
+   <div class="formated">
+     <div class="username">
+       <input type="text" pInputText placeholder="Email" id="email" formControlName="valueEmail" >
+     </div>
+     <div class="p-password">
+       <p-password type="password" placeholder="Password" [feedback]="false" [toggleMask]="true" formControlName="valuePassword"></p-password>
+     </div>
+     <div class="p-button">
+       <p-button type="button" label="Login" (click)="loginPost()"></p-button>
+     </div>
+     <div class="register">
+       <p>You don´t have account? <a (click)="register()">Register now</a> </p>
+     </div>
+     <div class="lostpassword">
+       <p>Dont remember password? <a (click)="recover()">recover password </a></p>
+     </div>
+   </div>
+  </form>
+</section>

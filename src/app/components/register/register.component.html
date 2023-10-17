@@ -1,0 +1,36 @@
+<form [formGroup]="formRegister" (ngSubmit)="onSubmit()" *ngIf="formRegister">
+  <div class="fullname">
+      <div class="firstname">
+          <input type="text" pInputText placeholder="First Name" id="FirstName" formControlName="valueFirstname" >
+      </div>
+      <div class="lastname">
+          <input type="text" pInputText placeholder="Last Name" id="LastName" formControlName="valueLastname">
+      </div>
+  </div>
+  <div class="email">
+      <input type="text" pInputText placeholder="Email" id="Email" formControlName="valueEmail">
+  </div>
+  <div class="password">
+      <p-password type="password" placeholder="Password" [feedback]="false" [toggleMask]="true" formControlName="valuePassword"></p-password>
+  </div>
+  <div class="confpassword">
+      <p-password type="confirmatepassword" placeholder="ConfirmatePassword" [feedback]="false" [toggleMask]="true" formControlName="valueConfirmPassword"></p-password>
+  </div>
+  <div *ngIf="formRegister.hasError('passwordMismatch') && formRegister.touched" class="w-full px-4 bg-amber-200 rounded mt-4">
+      Las contraseñas no coinciden
+  </div>
+  <div class="mt-5">
+      <input type="checkbox" class="border-gray-400">
+      <span>
+            <a> Acepto los terminos y condiciones.</a>
+          </span>
+  </div>
+
+  <div class="p-button">
+      <p-button type="Register" label="Register"  [disabled]="formRegister.invalid" ></p-button>
+  </div>
+
+<div>
+  <p>Already have account? <a (click)="loginReg()">Login</a></p>
+</div>
+</form>
