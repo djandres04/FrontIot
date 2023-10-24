@@ -16,6 +16,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {InputTextModule} from "primeng/inputtext";
 import {PasswordModule} from "primeng/password";
 import {ButtonModule} from "primeng/button";
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {ButtonModule} from "primeng/button";
     RegisterComponent,
     LightComponent,
     DoorComponent,
-    BuzzerComponent
+    BuzzerComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

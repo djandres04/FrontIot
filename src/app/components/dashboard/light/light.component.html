@@ -1,6 +1,8 @@
-<div *ngFor="let light of lightData">
-  <p>ID: {{ light.id }}</p>
-  <p>Ubicación: {{ light.ubication }}</p>
-  <p>Estado: {{ light.status }}</p>
-  <button (click)="toggleLightStatus(light.id, light.status)">Cambiar Estado</button>
+<div class="lightcontainerchild">
+  <div *ngFor="let light of lightData" class="forlight">
+    <h2>Light #{{ light.id }}</h2>
+    <h3>Ubicación: {{ light.ubication }}</h3>
+    <h3>Estado: {{ light.status }}</h3>
+    <button (click)="toggleLightStatus(light.id, light.status)">Cambiar Estado</button>
+  </div>
 </div>

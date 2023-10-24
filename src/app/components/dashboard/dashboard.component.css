@@ -1,0 +1,62 @@
+section{
+  width: 80%;
+  height: 90%;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.doorcontainer{
+  display: flex;
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en filas */
+  gap: 10px; /* Espacio entre los elementos */
+}
+.principal{
+  display: flex;
+  height: 3.5rem;
+  justify-content: space-between;
+  left: -10%;
+  right: -10%;
+}
+
+.buttonedit{
+  margin-bottom: auto;
+  margin-top:auto;
+  top: 50%;
+}
+.device{
+  margin-left:2%;
+  margin-bottom:auto;
+  margin-top:auto;
+  top:50%;
+}
+
+.alldevices{
+  margin-right:1%;
+  margin-left:1%;
+}
+
+.devicescontainer{
+  flex-direction: column;
+}
+
+.light{
+  margin-top: 2%;
+}
+
+h1{
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+  0px 8px 13px rgba(0,0,0,0.1),
+  0px 18px 23px rgba(0,0,0,0.1);
+}
+.separador {
+  border: none; /* Elimina el borde predeterminado */
+  height: 1px; /* Altura de la línea separadora */
+  background: #ccc; /* Color de la línea */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra debajo de la línea */
+  margin: 20px 0; /* Espacio vertical entre el contenido y la línea */
+}

@@ -1,6 +1,10 @@
-<div *ngFor="let door of doorData">
-  <p>ID: {{ door.id }}</p>
-  <p>Ubicación: {{ door.ubication }}</p>
-  <p>Estado: {{ door.status }}</p>
-  <button (click)="toggleDoorStatus(door.id, door.status)">Cambiar Estado</button>
+<div class="doorcontainerchild">
+  <div *ngFor="let door of doorData" class="fordoor">
+    <div class = door1>
+      <h2>Door #{{ door.id }}</h2>
+      <h3>Ubicación: {{ door.ubication }}</h3>
+      <h2>Estado: {{ door.status }}</h2>
+      <p-button class="button" (click)="toggleDoorStatus(door.id, door.status)">Cambiar Estado</p-button>
+    </div>
+  </div>
 </div>

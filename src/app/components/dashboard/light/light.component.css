@@ -1,0 +1,16 @@
+.lightcontainerchild{
+  display: flex;
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en filas */
+  gap: 10px; /* Espacio entre los elementos */
+  margin-left: -15px;
+  margin-top:-15px;
+}
+.forlight{
+  width: 200px; /* Ancho deseado */
+  height: 200px; /* Altura deseada */
+  background-color: #fff; /* Color de fondo del cuadro */
+  border: 1px solid #ccc; /* Borde del cuadro */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+  padding: 10px; /* Espacio interno dentro del cuadro */
+  margin: 10px; /* Espacio entre los cuadros */
+}

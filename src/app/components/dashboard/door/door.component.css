@@ -1,0 +1,33 @@
+.doorcontainerchild{
+  display: flex;
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en filas */
+  gap: 10px; /* Espacio entre los elementos */
+  margin-left: -15px;
+  margin-top:-15px;
+}
+.fordoor{
+  width: 200px; /* Ancho deseado */
+  height: 200px; /* Altura deseada */
+  background-color: #fff; /* Color de fondo del cuadro */
+  border: 1px solid #ccc; /* Borde del cuadro */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+  padding: 10px; /* Espacio interno dentro del cuadro */
+  margin: 10px; /* Espacio entre los cuadros */
+}
+
+.door1{
+
+}
+
+.p-button {
+  background-color: #007bff; /* Cambiar el color de fondo */
+  color: #fff; /* Cambiar el color del texto */
+  font-weight: bold; /* Cambiar la negrita del texto */
+  border: none; /* Eliminar el borde */
+  border-radius: 5px; /* Agregar bordes redondeados */
+  padding: 10px 20px; /* Ajustar el relleno (padding) */
+}
+
+.p-button:hover {
+  background-color: #0056b3; /* Cambiar el color de fondo en el hover */
+}
