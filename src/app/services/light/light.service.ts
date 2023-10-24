@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {configUrl} from "../../../env/config";
+import {Router} from "@angular/router";
+
+import {ApiResponse} from  '../../models/apiResponse';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LightService {
-
   constructor(
-    private http:HttpClient
+    private http:HttpClient,
+    private router:Router
   ) { }
 
 
@@ -22,9 +25,23 @@ export class LightService {
       'token':token
     });
 
-    console.log('JSON a enviar:', dataToSend);
 
     // Realizar la solicitud POST para actualizar el estado en el servidor
-    return this.http.post(configUrl.light,  dataToSend, {headers});
+    this.http.post<ApiResponse>(configUrl.light,  dataToSend, {headers}).subscribe(
+      (response) => {
+        if (response.message === 'Signature has expired') {
+          // Redirigir al usuario a la página de inicio de sesión
+          this.router.navigate(['login']);
+          return null
+        } else {
+          // Aquí puedes manejar la respuesta del POST si es necesario
+          return response.message
+        }
+      },
+      (error) => {
+        // Manejar otros errores de la solicitud
+        console.log(error);
+      }
+    );
   }
 }

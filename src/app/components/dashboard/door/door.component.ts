@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {LightService} from "../../../services/light/light.service";
+import {DoorService} from "../../../services/door/door.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-door',
@@ -10,11 +11,12 @@ export class DoorComponent {
   @Input() doorData: any[] =[];
 
   constructor(
-    private doorService:LightService
+    private doorService:DoorService,
+    private router:Router
   ) {
   }
 
-  toggleLightStatus(id: string, currentStatus: string) {
+  toggleDoorStatus(id: string, currentStatus: string) {
     // Encuentra el elemento en lightData con el ID correspondiente
     const lightToToggle = this.doorData.find((door: { id: string; }) => door.id === id);
 
@@ -22,7 +24,7 @@ export class DoorComponent {
       // Realiza el toggle del estado
       lightToToggle.status = currentStatus === 'True' ? 'False' : 'True';
 
-      this.doorService.postStatus(id,lightToToggle.status).subscribe();
+      this.doorService.postStatus(id,lightToToggle.status);
     }
   }
 
