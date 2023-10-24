@@ -1,1 +1,6 @@
-<p>door works!</p>
+<div *ngFor="let door of doorData">
+  <p>ID: {{ door.id }}</p>
+  <p>Ubicación: {{ door.ubication }}</p>
+  <p>Estado: {{ door.status }}</p>
+  <button (click)="toggleLightStatus(door.id, door.status)">Cambiar Estado</button>
+</div>

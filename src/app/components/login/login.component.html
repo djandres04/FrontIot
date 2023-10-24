@@ -1,23 +1,33 @@
 <link rel="stylesheet" href="login.component.css">
 
-<section class="login">
-  <form [formGroup]="formLogin">
-   <div class="formated">
-     <div class="username">
-       <input type="text" pInputText placeholder="Email" id="email" formControlName="valueEmail" >
+<div class="body">
+  <section class="container">
+    <div class="login-container">
+      <div class="form-container">
+        <h1 class="opacity">Login</h1>
+    <form [formGroup]="formLogin">
+     <div class="formated">
+       <div class="username">
+         <input type="text" pInputText placeholder="Email" id="email" formControlName="valueEmail" >
+       </div>
+       <div class="p-password">
+         <p-password type="password" placeholder="Password" [feedback]="false" [toggleMask]="true" formControlName="valuePassword"></p-password>
+       </div>
+       <div class="opacity">
+         <p-button type="button" label="Login" (click)="loginPost()"></p-button>
+       </div>
      </div>
-     <div class="p-password">
-       <p-password type="password" placeholder="Password" [feedback]="false" [toggleMask]="true" formControlName="valuePassword"></p-password>
-     </div>
-     <div class="p-button">
-       <p-button type="button" label="Login" (click)="loginPost()"></p-button>
-     </div>
-     <div class="register">
-       <p>You don´t have account? <a (click)="register()">Register now</a> </p>
-     </div>
-     <div class="lostpassword">
-       <p>Dont remember password? <a (click)="recover()">recover password </a></p>
-     </div>
-   </div>
-  </form>
-</section>
+    </form>
+    <div class="register-forget opacity">
+      <div class="register">
+        <a (click)="register()">REGISTER</a>
+      </div>
+      <div class="lostpassword">
+        <a (click)="recover()">FORGOT PASSWORD </a>
+      </div>
+    </div>
+      </div>
+    </div>
+  </section>
+</div>
+

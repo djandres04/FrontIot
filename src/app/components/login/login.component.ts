@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {configUrl } from 'src/env/config';
+import { configUrl } from 'src/env/config';
 import {Router} from "@angular/router";
 
 @Component({
@@ -13,7 +13,6 @@ export class LoginComponent{
 
 
   formLogin:FormGroup=new FormGroup({});
-
 
 
   ngOnInit():void{
@@ -57,9 +56,9 @@ export class LoginComponent{
       next:(response:any) =>{
         if (response && response.access_token){
          localStorage.setItem('token',response.access_token)
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['/dashboard']);
         } else {
-          this.router.navigate(['login']);
+          this.router.navigate(['/login']);
         }
       }
     });

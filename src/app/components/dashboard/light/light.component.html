@@ -1,1 +1,6 @@
-<p>light works!</p>
+<div *ngFor="let light of lightData">
+  <p>ID: {{ light.id }}</p>
+  <p>Ubicación: {{ light.ubication }}</p>
+  <p>Estado: {{ light.status }}</p>
+  <button (click)="toggleLightStatus(light.id, light.status)">Cambiar Estado</button>
+</div>

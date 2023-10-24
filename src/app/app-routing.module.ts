@@ -27,8 +27,7 @@ const routes: Routes = [
   },
   {
     path:'dashboard',
-    canActivate:[AuthGuard],
-    component:DashboardComponent
+    component:DashboardComponent,
   },
   {
     path:'page-not-found',

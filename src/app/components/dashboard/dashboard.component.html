@@ -1,1 +1,19 @@
-<p>dashboard works!</p>
+<section>
+
+  <div>
+    <h1>Light</h1>
+    <div *ngIf="dataFromServer && dataFromServer.light">
+      <!-- Mostrar el componente Light -->
+      <app-light [lightData]="dataFromServer.light"></app-light>
+    </div>
+  </div>
+
+  <div>
+    <h1>Door</h1>
+    <!-- Mostrar el componente Door -->
+    <div *ngIf=" dataFromServer && dataFromServer.door">
+      <app-door [doorData]="dataFromServer.door"></app-door>
+    </div>
+  </div>
+</section>
+
