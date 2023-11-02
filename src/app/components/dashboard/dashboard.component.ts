@@ -27,6 +27,7 @@ export class DashboardComponent implements OnInit{
     if(token){
       this.dashboardService.getPosts(token).subscribe((event: HttpEvent<any>) => {
         if (event instanceof HttpResponse) {
+          console.log(event.body)
           this.dataFromServer = event.body;
         }
       });

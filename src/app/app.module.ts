@@ -17,6 +17,11 @@ import {InputTextModule} from "primeng/inputtext";
 import {PasswordModule} from "primeng/password";
 import {ButtonModule} from "primeng/button";
 import { NavbarComponent } from './components/navbar/navbar.component';
+import {MessageModule} from "primeng/message";
+import {MessagesModule} from "primeng/messages";
+import {RippleModule} from "primeng/ripple";
+import {ToastModule} from "primeng/toast";
+import {MenuModule} from "primeng/menu";
 
 @NgModule({
   declarations: [
@@ -38,7 +43,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ReactiveFormsModule,
     InputTextModule,
     PasswordModule,
-    ButtonModule
+    ButtonModule,
+    MessageModule,
+    MessagesModule,
+    RippleModule,
+    ToastModule,
+    MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

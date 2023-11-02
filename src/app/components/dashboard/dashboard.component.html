@@ -3,23 +3,21 @@
     <div class="device">
       <h1>Devices</h1>
     </div>
-
-    <div class="buttonedit">
-      <span class="p-buttonset">
-        <button pButton pRipple label="Save" icon="pi pi-check"></button>
-        <button pButton pRipple label="Delete" icon="pi pi-trash"></button>
-        <button pButton pRipple label="Cancel" icon="pi pi-times"></button>
-    </span>
-    </div>
-
-
-
   </div>
   <div class="separador"></div>
   <div class="alldevices">
     <div class="devicescontainer">
       <div class="light">
-        <h1>Light</h1>
+        <div class="getouthere">
+          <div>
+          <h2>Light</h2>
+
+          </div>
+          <div>
+
+            <button pButton pRipple label="Add" class="p-button-success"></button>
+          </div>
+        </div>
         <div class="separador"></div>
         <div *ngIf="dataFromServer && dataFromServer.light" class="lightcontainer">
           <!-- Mostrar el componente Light -->
@@ -28,7 +26,10 @@
       </div>
 
       <div class="door">
-        <h1>Door</h1>
+        <div class="getouthere">
+          <h2>Door</h2>
+          <button pButton pRipple label="Add" class="p-button-success"></button>
+        </div>
         <div class="separador"></div>
         <!-- Mostrar el componente Door -->
         <div class="doorcontainer">

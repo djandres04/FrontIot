@@ -42,4 +42,55 @@ export class DoorService {
       }
     );
   }
+
+    addDoor(id:string){
+        let token:any = localStorage.getItem('token');
+        const dataToSend = {id, topic: 'door' };
+
+        const headers = new HttpHeaders({
+            "Authorization": `Bearer ${token}`, // Ejemplo de encabezado de autorización
+            'Content-Type': 'application/json', // Tipo de contenido
+            'token':token
+        });
+
+        const body={
+            'id':id
+        }
+
+        this.http.post(configUrl.doorAdd,body,{headers})
+    }
+
+  editDoor(id:string, ubication:string){
+    let token:any = localStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+        "Authorization": `Bearer ${token}`, // Ejemplo de encabezado de autorización
+        'Content-Type': 'application/json', // Tipo de contenido
+        'token':token
+    });
+
+    const body={
+      'id':id,'ubication':ubication
+    }
+
+
+    this.http.put(configUrl.doorEdit,body,{headers})
+  }
+
+  deleteDoor(id:string){
+      let token:any = localStorage.getItem('token');
+      const dataToSend = {id, topic: 'door' };
+
+      const headers = new HttpHeaders({
+          "Authorization": `Bearer ${token}`, // Ejemplo de encabezado de autorización
+          'Content-Type': 'application/json', // Tipo de contenido
+          'token':token
+      });
+
+      this.http.delete(configUrl.doorDelete + id ,{headers})
+
+  }
+
+
+
 }

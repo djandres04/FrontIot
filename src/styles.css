@@ -1,3 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+
+:root{
+  --mint-green-50: rgb(241, 253, 240);
+  --mint-green-100: rgb(222, 251, 221);
+  --mint-green-200: rgb(189, 246, 188);
+  --mint-green-300: rgb(144, 238, 144);
+  --mint-green-400: rgb(77, 219, 78);
+  --mint-green-500: rgb(37, 194, 38);
+  --mint-green-600: rgb(25, 160, 26);
+  --mint-green-700: rgb(23, 126, 25);
+  --mint-green-800: rgb(24, 99, 25);
+  --mint-green-900: rgb(21, 82, 23);
+  --mint-green-950: rgb(6, 45, 8);
+}

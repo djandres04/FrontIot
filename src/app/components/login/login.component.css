@@ -1,7 +1,7 @@
 .body {
-  --background: #1a1a2e;
-  --color: #ffffff;
-  --primary-color: #0f3460;
+  --background: #white;
+  --color: #black;
+  --primary-color: #78A7D5 ;
 }
 
 * {
@@ -82,33 +82,11 @@ h1 {
   -webkit-animation: wobble 0.3s ease-in;
 }
 
-.login-container form p-password {
-  display: block;
-  padding: 14.5px;
+.p-password1{
   width: 100%;
-  margin: 2rem 0;
-  color: var(--color);
-  outline: none;
-  background-color: #9191911f;
-  border: none;
-  border-radius: 5px;
-  font-weight: 500;
-  letter-spacing: 0.8px;
-  font-size: 15px;
-  backdrop-filter: blur(15px);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
 }
 
-.login-container form p-password:focus {
-  box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.2);
-  animation: wobble 0.3s ease-in;
-  -webkit-animation: wobble 0.3s ease-in;
-}
-
-.login-container form p-button {
+.login-container form button {
   background-color: var(--primary-color);
   color: var(--color);
   display: block;
@@ -142,46 +120,6 @@ h1 {
   -o-transform: scale(1.02);
 }
 
-.circle {
-  width: 8rem;
-  height: 8rem;
-  background: var(--primary-color);
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  position: absolute;
-}
-
-.illustration {
-  position: absolute;
-  top: -14%;
-  right: -2px;
-  width: 90%;
-}
-
-.circle-one {
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transform: translate(-45%, -45%);
-  -webkit-transform: translate(-45%, -45%);
-  -moz-transform: translate(-45%, -45%);
-  -ms-transform: translate(-45%, -45%);
-  -o-transform: translate(-45%, -45%);
-}
-
-.circle-two {
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  transform: translate(45%, 45%);
-  -webkit-transform: translate(45%, 45%);
-  -moz-transform: translate(45%, 45%);
-  -ms-transform: translate(45%, 45%);
-  -o-transform: translate(45%, 45%);
-}
 
 .register-forget {
   margin: 1rem 0;

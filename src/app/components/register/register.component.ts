@@ -3,6 +3,9 @@ import {AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators} from "
 import {Router} from "@angular/router";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { configUrl } from 'src/env/config';
+import {RegisterUser} from "../../models/registerUser";
+import {RegisterService} from "../../services/register/register.service";
+import { MessagesModule } from 'primeng/messages';
 
 @Component({
   selector: 'app-register',
@@ -12,11 +15,14 @@ import { configUrl } from 'src/env/config';
 export class RegisterComponent {
 
   formRegister:FormGroup=new FormGroup({});
+  messages: any[] = [];
+  emailUsing:boolean=false;
 
   constructor(
       private router:Router,
       private fb:FormBuilder,
-      private http:HttpClient
+      private registerService:RegisterService,
+      private messagesModule: MessagesModule
   ) {
   };
 
@@ -42,19 +48,21 @@ export class RegisterComponent {
     if (this.formRegister?.valid) {
       const {valueFirstname, valueLastname, valueEmail, valuePassword} = this.formRegister.value;
 
-      const body={
+      const body:RegisterUser={
         "email":valueEmail,
         "password":valuePassword,
         "first_name":valueFirstname,
         "last_name":valueLastname,
       }
-      this.http.post(configUrl.register, body, this.httpOptions).subscribe({
-        next:(response:any) =>{
-          if (response && response.message){
-            this.router.navigate(['login']);
-          } else {
-            this.router.navigate(['register']);
-          }
+
+      this.registerService.postRegister(body).subscribe((result: boolean) => {
+        if (result) {
+          console.log("sucessfully")
+          this.addSuccessMessage('Usuario creado exitosamente');
+          this.router.navigate(['login'])
+        } else {
+          this.emailUsing = true;
+          console.log("bad")
         }
       });
 
@@ -77,4 +85,15 @@ export class RegisterComponent {
     this.router.navigate(['login'])
   }
 
+  addSuccessMessage(detail: string) {
+    this.messages = [{ severity: 'success', summary: 'Éxito', detail }];
+    setTimeout(() => {
+      this.clearMessages();
+      this.router.navigate(['login']); // Redirigir al componente de inicio de sesión
+    }, 5000);
+  }
+
+  clearMessages() {
+    this.messages = [];
+  }
 }

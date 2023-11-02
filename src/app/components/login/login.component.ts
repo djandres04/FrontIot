@@ -3,6 +3,8 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { configUrl } from 'src/env/config';
 import {Router} from "@angular/router";
+import {LoginService} from "../../services/login/login.service";
+import {LoginUser} from "../../models/loginUser";
 
 @Component({
   selector: 'app-login',
@@ -11,9 +13,9 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent{
 
+  badcredentials:boolean=false;
 
   formLogin:FormGroup=new FormGroup({});
-
 
   ngOnInit():void{
     this.formLogin = this.fb.group(
@@ -26,16 +28,10 @@ export class LoginComponent{
   constructor(
     private router:Router,
     private fb:FormBuilder,
-    private http:HttpClient
+    private loginService:LoginService
   ) {
   };
 
-
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-    }),
-  };
 
   loginPost(){
 
@@ -50,16 +46,13 @@ export class LoginComponent{
     }
     const {valueEmail, valuePassword} = this.formLogin.value;
 
-    const body = {"email":valueEmail,"password":valuePassword};
+    const body:LoginUser = {"email":valueEmail,"password":valuePassword};
 
-    this.http.post(configUrl.login, body, this.httpOptions).subscribe({
-      next:(response:any) =>{
-        if (response && response.access_token){
-         localStorage.setItem('token',response.access_token)
-          this.router.navigate(['/dashboard']);
-        } else {
-          this.router.navigate(['/login']);
-        }
+    this.loginService.postLogin(body).subscribe((loginSuccessful) => {
+      if (loginSuccessful) {
+        this.router.navigate(['dashboard'])
+      } else {
+        this.badcredentials=true;
       }
     });
   }

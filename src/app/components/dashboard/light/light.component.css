@@ -6,11 +6,26 @@
   margin-top:-15px;
 }
 .forlight{
-  width: 200px; /* Ancho deseado */
-  height: 200px; /* Altura deseada */
+  width: 250px; /* Ancho deseado */
+  height: 250px; /* Altura deseada */
   background-color: #fff; /* Color de fondo del cuadro */
-  border: 1px solid #ccc; /* Borde del cuadro */
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
-  padding: 10px; /* Espacio interno dentro del cuadro */
-  margin: 10px; /* Espacio entre los cuadros */
+  border: 2px solid #ccc; /* Borde del cuadro con un grosor de 2px */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  padding: 20px; /* Espacio interno dentro del cuadro */
+  margin: 20px; /* Espacio entre los cuadros */
+  text-align: center; /* Centrar el contenido horizontalmente */
+  border-radius: 10px; /* Bordes redondos con un radio de 10px */
+}
+
+.p-button {
+  background-color: #007bff; /* Cambiar el color de fondo */
+  color: #fff; /* Cambiar el color del texto */
+  font-weight: bold; /* Cambiar la negrita del texto */
+  border: none; /* Eliminar el borde */
+  border-radius: 5px; /* Agregar bordes redondeados */
+  padding: 10px 20px; /* Ajustar el relleno (padding) */
+}
+
+.p-button:hover {
+  background-color: #0056b3; /* Cambiar el color de fondo en el hover */
 }
